@@ -8,4 +8,5 @@ public interface StudentService {
 	List<Student> studentList();
 	boolean addStudent(Student std);
 	boolean modifyStudent(Student std);
+	
 }

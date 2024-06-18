@@ -40,12 +40,12 @@
 	 <td colspan="3">
 	 <c:choose>
 	 	<c:when test="${!empty logId && logId == board.writer}">
-	 		<button type="button" class="btn btn-secondary" onclick="location.href='modifyForm.do?bno=${board.boardNo }&page=${page}&searchCondition=${searchCondition }&keyword=${keyword}'">수정</button>
-	 		<button type="button" class="btn btn-secondary" onclick="location.href='removerForm.do?bno=${board.boardNo}'">삭제</button>	
+	 		<button type="button" class="btn btn-secondary" onclick="location.href='modifyForm.do?bno=${board.boardNo}&page=${page}&searchCondition=${searchCondition }&keyword=${keyword}'">수정</button>
+	 		<button type="button" class="btn btn-secondary" onclick="location.href='removerBoardForm.do?bno=${board.boardNo}'">삭제</button>	
 	 	</c:when>
 	 	<c:otherwise>
-	 		<button type="button" disabled class="btn btn-secondary" onclick="location.href='modifyForm.do?bno=${board.boardNo }&page=${page }&searchCondition=${searchCondition }&keyword=${keyword}'">수정</button>
-	 		<button type="button" disabled class="btn btn-secondary" onclick="location.href='removerForm.do?bno=${board.boardNo}'">삭제</button>
+	 		<button type="button" disabled class="btn btn-secondary" onclick="location.href='modifyForm.do?bno=${board.boardNo}&page=${page }&searchCondition=${searchCondition }&keyword=${keyword}'">수정</button>
+	 		<button type="button" disabled class="btn btn-secondary" onclick="location.href='removerBoardForm.do?bno=${board.boardNo}'">삭제</button>
 	 	</c:otherwise>
 	 </c:choose>
 

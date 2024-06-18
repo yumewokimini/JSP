@@ -7,7 +7,7 @@
 	<h3>main 페이지</h3>
 	<%
 		Student student = (Student) request.getAttribute("student");
-	List<Student> list = (List<Student>) request.getAttribute("studentList");
+	 	List<Student> list = (List<Student>) request.getAttribute("studentList");
 	%>
 	<p>학생번호 : <%=student.getStdNo() %></p>
 	<p>학생이름 : <%=student.getStdName() %></p>

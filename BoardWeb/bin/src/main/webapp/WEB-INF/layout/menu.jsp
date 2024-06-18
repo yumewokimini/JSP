@@ -8,16 +8,18 @@
                 <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" href="main.do">메인페이지</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="">학생정보등록화면</a>
-                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">게시글 목록</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="studentForm.do">학생정보등록화면</a>
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="boardList.do">게시글 목록</a>
                     <c:choose>
                     	<c:when test = "${empty logId}">
-		                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">로그인</a>            	
+		                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="loginForm.do">로그인</a>            	
                     	</c:when>
                     	<c:otherwise>
- 		                   <a class="list-group-item list-group-item-action list-group-item-light p-3" href="#!">로그아웃</a>            	
+ 		                   <a class="list-group-item list-group-item-action list-group-item-light p-3" href="logout.do">로그아웃</a>            	
                     	</c:otherwise>
                     </c:choose>	
+                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="script.do">자바스크립트</a>
+                    
                     
                 </div>
             </div>

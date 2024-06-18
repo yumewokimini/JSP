@@ -40,4 +40,6 @@
 	from tbl_student
 	where std_no = #{stdNo}
 	</select>
+	
+
 </mapper>

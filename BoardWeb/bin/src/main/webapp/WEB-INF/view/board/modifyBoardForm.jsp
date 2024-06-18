@@ -8,10 +8,10 @@
 %>
 <!-- <form action="modifyBoard.do"> -->
 <form action="modifyBoard.do">
-<input type="hidden" value = "${board.boardNo }" name="bno">
-	<input type="hidden" value = "${page }" name="page">
-	<input type="hidden" value="${searchCondition }" name="searchCondition">
-	<input type="hidden" value="${keyword }" name="keyword">
+<input type="hidden" value = "${board.boardNo}" name="bno">
+	<input type="hidden" value = "${page}" name="page">
+	<input type="hidden" value="${searchCondition}" name="searchCondition">
+	<input type="hidden" value="${keyword}" name="keyword">
 
 	<table class="table">
  	 <tr>
@@ -32,8 +32,8 @@
  	     </tr>
  	     <tr>
  	<!--     <td colspan="2"><input class="form-control" type="submit" value="수정완료"></td> -->
- 	     <td colspan="2"><button type="submit" class="btn btn-primary" onclick="location.href='modifyBoard.do?bno=${board.boardNo }&page=${page}&searchCondition=${searchCondition }&keyword=${keyword}'"> 수정 </button></td>
- 	     <td colspan="2"><button type="submit" class="btn btn-primary" >수정취소</button></td><!-- 미완 -->
+ 	     <td colspan="2"><button type="submit" class="btn btn-primary"> 수정 </button></td>
+ 		 <td colspan="2"><button type="button" class="btn btn-primary" onclick="location.href='getBoard.do?bno=${board.boardNo}&page=${page}&keyword=${keyword}'">수정취소</button></td><!-- 미완 -->
  	     </tr>
 	</table>
 </form>

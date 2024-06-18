@@ -34,7 +34,7 @@ public class AddStudent implements Control {
 		student.setBldType(btype);
 
 		if (svc.addStudent(student)) {
-			System.err.println("정상등록");
+			System.out.println("정상등록");
 			resp.sendRedirect("main.do");
 		} else {
 			System.out.println("등록실패");

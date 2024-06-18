@@ -32,7 +32,7 @@
 		<th>내용</th><td><textarea name="content" cols="30" rows="10" required></textarea></td>
 	</tr>
 	<tr>
-		<th>작성자</th><td><input type="text" name="writer" required value="<%=loginId %>"></td>
+		<th>작성자</th><td><input type="text" name="writer" required value="<%=loginId %>" readonly="readonly"></td>
 	</tr>
 	<td colspan="2" align="center">
 	<input type="submit" class="btn btn-primary" value="저장"><!-- danger , warring -->

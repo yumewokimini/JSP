@@ -23,6 +23,7 @@ public class StudentServiceImpl implements StudentService {
 	public boolean addStudent(Student std) {
 		return mapper.insertStudent(std) == 1;
 	}
+	
 
 	@Override
 	public boolean modifyStudent(Student std) {

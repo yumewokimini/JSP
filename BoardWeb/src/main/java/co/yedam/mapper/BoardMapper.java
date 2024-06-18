@@ -20,5 +20,6 @@ public interface BoardMapper {
  	int deleteBoard(int bno);
  	BoardVO selectBoard(int bno); // 단건조회
  	
+ 	
  	MemberVO selectMember(@Param("id") String id, @Param("pw") String pw); //매개변수
 }
