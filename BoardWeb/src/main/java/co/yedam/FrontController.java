@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.web.AddForm;
 import co.yedam.web.AddStudent;
 import co.yedam.web.BoardList;
 import co.yedam.web.GetBoard;
@@ -78,6 +79,8 @@ public class FrontController extends HttpServlet{
 		map.put("/logout.do", new LogoutControl());
 		// 회원목록(관리자 템플릿)
 		map.put("/memberList.do", new memberList());
+		// 회원등록
+		map.put("/addMemberForm.do", new AddForm());
 		
 		//자바스크립트 연습용 페이지
 		map.put("/script.do", new ScriptForm());
