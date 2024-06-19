@@ -78,7 +78,9 @@ public class BoardServiceImpl implements BoardService {
 	}
 	
 	@Override
-	public boolean inputuser(String id) {
-		return mapper.deluser(id) == 1;
+	public boolean inputuser(MemberVO mvo) {
+		return mapper.inputuser(mvo) == 1;
 	}
+	
+
 }

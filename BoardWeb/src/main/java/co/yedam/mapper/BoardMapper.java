@@ -27,5 +27,6 @@ public interface BoardMapper {
  	int insertMemberAjax(MemberVO mvo);
  	int selectMemberAjax(String id);
  	int deluser(String id);
+ 	int inputuser(MemberVO mvo);
  	
 }

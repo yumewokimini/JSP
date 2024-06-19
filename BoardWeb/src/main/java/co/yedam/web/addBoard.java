@@ -28,7 +28,7 @@ public class addBoard implements Control{
 		BVO.setWriter(writer);
 		
 		if (svc.addBoard(BVO)) {
-			System.err.println("정상등록");
+			System.out.println("정상등록");
 			resp.sendRedirect("boardList.do");
 		} else {
 			System.out.println("등록실패");

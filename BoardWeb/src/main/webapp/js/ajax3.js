@@ -127,19 +127,30 @@ function removeMemberFnc(e){
 
  document.getElementById('modBtn').addEventListener('click',function(){
 		let id = document.getElementById('modify_id').value;
-		let name = document.getElementById('modify_name').value;
 		let pass = document.getElementById('modify_pass').value;
+		let name = document.getElementById('modify_name').value;
 		
 		// ajax 생성
 		// 정상적으로 정보가 업데이트 되면 화면수정
 		// 수정이 안됏으며 화면 수정 x
-		
-		let url = 'inputAjax.do?id='+id+'&pw='+pw+''
-		
+
+		let url = 'inputAjax.do?id='+id+'&pw='+pass+'&name='+name;
+		const inputAjax = new XMLHttpRequest();
+		inputAjax.open('get',url);
+		inputAjax.send();
+		inputAjax.onload = function(){
+		let result = JSON.parse(inputAjax.responseText);
+			if(result.retCode == 'OK'){
+				alert('성공');
+			}else{
+				alert('실패');
+			}
+		}
 		let targetTr = document.getElementById(id);
 		targetTr.children[1].innerHTML = name;
 		targetTr.children[2].innerHTML = pass;
 		
 		document.getElementById('myModal').style.display = 'none';
 		
-	})
+})
+   

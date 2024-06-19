@@ -27,5 +27,5 @@ public interface BoardService {
 	boolean addMemberAjax(MemberVO mvo);
 	boolean checkMemberId(String id);
 	boolean deluser(String id);
-	boolean inputuser(String id);
+	boolean inputuser(MemberVO mvo);
 }

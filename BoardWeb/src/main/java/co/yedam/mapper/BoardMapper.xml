@@ -130,8 +130,8 @@
 	 
 	 <update id="inputuser" parameterType = "co.yedam.vo.MemberVO">
 	 		update member_tbl
-			set USER_PW = #{userPw},
+			set user_pw = #{userPw},
 	 	   	    user_name = #{userName}
-			where board_no = #{boardNo} 
+			where user_id = #{userId} 
 	 </update>
 </mapper>

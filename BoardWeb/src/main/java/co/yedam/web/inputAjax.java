@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import co.yedam.common.Control;
+import co.yedam.vo.MemberVO;
 import co.yedom.service.BoardService;
 import co.yedom.service.BoardServiceImpl;
 
@@ -16,16 +17,22 @@ public class inputAjax implements Control {
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		String id = req.getParameter("userId");
-		String pw = req.getParameter("userPw");
-		String un = req.getParameter("userName");
+		String id = req.getParameter("id");
+		String pw = req.getParameter("pw");
+		String name = req.getParameter("name");
 		
 		BoardService svc = new BoardServiceImpl();
+		MemberVO mvo = new MemberVO();
+		mvo.setUserId(id);
+		mvo.setUserPw(pw);
+		mvo.setUserName(name);
 		
-		req.setAttribute("userId", id);
-		req.setAttribute("userPw", pw);
-		req.setAttribute("userName", un);
-		req.getRequestDispatcher(un).forward(req, resp);
+		if(svc.inputuser(mvo)) {
+			resp.getWriter().print("{\"retCode\":\"OK\"}");//{"retCode":"OK"}
+			
+		}else{
+			resp.getWriter().print("{\"retCode\":\"NG\"}");
+		}
 
 	}
 
