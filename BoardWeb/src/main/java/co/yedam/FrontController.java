@@ -13,12 +13,16 @@ import javax.servlet.http.HttpServletResponse;
 import co.yedam.common.Control;
 import co.yedam.web.adduserForm;
 import co.yedam.web.AddStudent;
+import co.yedam.web.AjaxForm;
 import co.yedam.web.BoardList;
+import co.yedam.web.CheckIdAjax;
 import co.yedam.web.GetBoard;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginForm;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
+import co.yedam.web.MemberAddAjax;
+import co.yedam.web.MemberAjax;
 import co.yedam.web.ModifyBoard;
 import co.yedam.web.ModifyForm;
 import co.yedam.web.ProductControl;
@@ -27,6 +31,8 @@ import co.yedam.web.StudentForm;
 import co.yedam.web.addBoard;
 import co.yedam.web.adduser;
 import co.yedam.web.boardForm;
+import co.yedam.web.delAjax;
+import co.yedam.web.inputAjax;
 import co.yedam.web.memberList;
 import co.yedam.web.removerBoard;
 import co.yedam.web.removerForm;
@@ -87,6 +93,13 @@ public class FrontController extends HttpServlet{
 		//자바스크립트 연습용 페이지
 		map.put("/script.do", new ScriptForm());
 		
+		//ajax연습
+		map.put("/ajax.do", new AjaxForm());
+		map.put("/membersAjax.do", new MemberAjax());
+		map.put("/addAjax.do", new MemberAddAjax());
+		map.put("/checkIdAjax.do", new CheckIdAjax());
+		map.put("/delAjax.do", new delAjax());
+		map.put("/inputAjax.do", new inputAjax());
 	}
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

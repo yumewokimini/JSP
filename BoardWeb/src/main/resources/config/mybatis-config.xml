@@ -22,5 +22,6 @@
   <mappers>
     <mapper resource="co/yedam/mapper/StudentMapper.xml"/>
     <mapper resource="co/yedam/mapper/BoardMapper.xml"/>
+    <mapper resource="co/yedam/mapper/userMapper.xml"/>
   </mappers>
 </configuration>
