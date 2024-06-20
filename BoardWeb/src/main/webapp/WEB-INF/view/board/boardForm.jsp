@@ -38,7 +38,7 @@
 	<td colspan="2" align="center">
 	
 	 <c:choose>
-	 	<c:when test="${!empty logId && logId == board.writer}">
+	 	<c:when test="${logId == board.writer}">
 			<input type="submit" class="btn btn-primary" value="저장"><!-- danger , warring -->
 		</c:when>
 		<c:otherwise>

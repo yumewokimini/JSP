@@ -94,8 +94,17 @@
 				<span class="col-sm-2">user01</span>
 				<span class="col-sm-3">2024.06.20</span>
 				
-				<span class="col-sm-1"><button  class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span>
+			<!--	<span class="col-sm-1"><button  class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span> -->
    
+   
+   				 <c:choose>
+	 				<c:when test="${!empty logId && logId == board.writer}">
+						<span class="col-sm-1"><button  class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span>
+					</c:when>
+					<c:otherwise>
+						<span class="col-sm-1"><button disabled class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span>
+					</c:otherwise>
+				 </c:choose>
 			
 			
 			</li>
