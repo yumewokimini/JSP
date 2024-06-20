@@ -1,0 +1,14 @@
+package co.yedom.service;
+
+import java.util.List;
+
+import co.yedam.vo.ReplyVO;
+
+public interface ReplyService {
+	//목록,단건,입력,삭제
+	List<ReplyVO> replyList(int boardNo);
+	ReplyVO getReply(int replyNo);
+	boolean registerReply(ReplyVO rvo);
+	boolean removerReply(int replyNo);
+	
+}

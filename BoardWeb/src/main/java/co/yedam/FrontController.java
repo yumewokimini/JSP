@@ -26,9 +26,11 @@ import co.yedam.web.MemberAjax;
 import co.yedam.web.ModifyBoard;
 import co.yedam.web.ModifyForm;
 import co.yedam.web.ProductControl;
+import co.yedam.web.ReplyList;
 import co.yedam.web.ScriptForm;
 import co.yedam.web.StudentForm;
 import co.yedam.web.addBoard;
+import co.yedam.web.addReply;
 import co.yedam.web.adduser;
 import co.yedam.web.boardForm;
 import co.yedam.web.delAjax;
@@ -36,6 +38,7 @@ import co.yedam.web.inputAjax;
 import co.yedam.web.memberList;
 import co.yedam.web.removerBoard;
 import co.yedam.web.removerForm;
+import co.yedam.web.removerReply;
 
 
 // front ->요청 url(*.do) - 실행컨트롤 매칭.
@@ -100,6 +103,13 @@ public class FrontController extends HttpServlet{
 		map.put("/checkIdAjax.do", new CheckIdAjax());
 		map.put("/delAjax.do", new delAjax());
 		map.put("/inputAjax.do", new inputAjax());
+		
+		//댓글관련.
+		map.put("/replyListJson.do", new ReplyList());
+		map.put("/removerReply.do", new removerReply());
+		map.put("/addReply.do", new addReply());
+		
+		
 	}
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

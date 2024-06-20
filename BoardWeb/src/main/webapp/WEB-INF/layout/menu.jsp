@@ -14,7 +14,7 @@
                     	<c:when test = "${empty logId}">
 		                    <a class="list-group-item list-group-item-action list-group-item-light p-3" href="loginForm.do">로그인</a>            	
                     	</c:when>
-                    	<c:otherwise>
+                    	<c:otherwise>                  	
  		                   <a class="list-group-item list-group-item-action list-group-item-light p-3" href="logout.do">로그아웃</a>            	
                     	</c:otherwise>
                     </c:choose>	

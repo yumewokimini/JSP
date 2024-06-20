@@ -5,6 +5,7 @@
     pageEncoding="UTF-8"%>
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
 
 <h3>게시판 등록</h3>
@@ -35,7 +36,16 @@
 		<th>작성자</th><td><input type="text" name="writer" required value="<%=loginId %>" readonly="readonly"></td>
 	</tr>
 	<td colspan="2" align="center">
-	<input type="submit" class="btn btn-primary" value="저장"><!-- danger , warring -->
+	
+	 <c:choose>
+	 	<c:when test="${!empty logId && logId == board.writer}">
+			<input type="submit" class="btn btn-primary" value="저장"><!-- danger , warring -->
+		</c:when>
+		<c:otherwise>
+			<input type="submit" disabled class="btn btn-primary" value="저장"><!-- danger , warring -->
+		</c:otherwise>
+	 </c:choose>
+	
 	</td>
 </table>
 </form>

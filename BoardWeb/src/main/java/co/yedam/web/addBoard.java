@@ -34,7 +34,8 @@ public class addBoard implements Control{
 			System.out.println("등록실패");
 			req.setAttribute("message", "처리중 오류가 발생");
 			req.getRequestDispatcher("board/boardForm.jsp").forward(req, resp);
-		}
+		}			
+				
 		
 	}
 

@@ -6,6 +6,8 @@
 <!-- "boardList"에 담긴 값을 읽어서 반복처리. -->
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+
 <style>
 .center {
   text-align: center;
@@ -72,7 +74,10 @@ a{
 
 <p>sc: ${searchCondition } kw: ${keyword }</p>
 <form>
-	<input type="button" class="btn btn-primary" value="게시판 작성" onclick="location.href='boardForm.do'">
+
+			<input type="button" class="btn btn-primary" value="게시판 작성" onclick="location.href='boardForm.do'">
+
+	
 </form>
 
 <table class="table">
