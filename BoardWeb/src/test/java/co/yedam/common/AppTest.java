@@ -1,15 +1,9 @@
 package co.yedam.common;
 
-import java.util.List;
-import java.util.function.Consumer;
-
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
-import co.yedam.mapper.*;
-import co.yedam.vo.*;
-import co.yedom.service.*;
-import co.yedam.mapper.*;
+import co.yedam.mapper.ReplyMapper;
 
 public class AppTest {
 	public static void main (String[] args) {
@@ -17,6 +11,21 @@ public class AppTest {
 		SqlSession sqlSession = sqlSeesionFactory.openSession();
 		
 		ReplyMapper mapper = sqlSession.getMapper(ReplyMapper.class);
+		
+		mapper.selectListPaging(160, 1)
+			.forEach(reply -> System.out.println(reply));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		// interface에 구현해 메소드가 하나만 있는 인터페이스:함수형 인터페이스.
 		//mapper.selectList(201).forEach(new Consumer<ReplyVO>() {
 		//	public void accept(ReplyVO t) {//추상 메소드
@@ -29,15 +38,15 @@ public class AppTest {
 		//ReplyVO rvo = mapper.selectReply(24);
 		//System.out.println(rvo);
 				
-		ReplyVO rvo = new ReplyVO();
+///		ReplyVO rvo = new ReplyVO();
 //		rvo.setReply("댓글작성테스트");
 //		rvo.setReply("댓글작성테스트");
 //		rvo.setReplyer("admin");
 //		rvo.setBoardNo(160);
 		
-		if(mapper.deleteReply(19) == 1) {
-			System.out.println("삭제성공.");
-		}
+//		if(mapper.deleteReply(19) == 1) {
+//			System.out.println("삭제성공.");
+//		}
 		
 //		try {
 //		if(mapper.insertReply(rvo) == 1) {
@@ -47,7 +56,7 @@ public class AppTest {
 //			System.out.println("예외발생.");
 //		}
 //		
-		mapper.selectList(160).forEach(reply-> System.out.println(reply));
+//		mapper.selectList(160).forEach(reply-> System.out.println(reply));
 		
 		
 		//interface = 구현객체.

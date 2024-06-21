@@ -36,9 +36,11 @@ import co.yedam.web.boardForm;
 import co.yedam.web.delAjax;
 import co.yedam.web.inputAjax;
 import co.yedam.web.memberList;
+import co.yedam.web.publicData;
 import co.yedam.web.removerBoard;
 import co.yedam.web.removerForm;
 import co.yedam.web.removerReply;
+import co.yedam.web.totalCnt;
 
 
 // front ->요청 url(*.do) - 실행컨트롤 매칭.
@@ -108,6 +110,11 @@ public class FrontController extends HttpServlet{
 		map.put("/replyListJson.do", new ReplyList());
 		map.put("/removerReply.do", new removerReply());
 		map.put("/addReply.do", new addReply());
+		
+		//댓글 전체 건수
+		map.put("/replyTotalCnt.do", new totalCnt());
+		//공공기관 데이터
+		map.put("/publicData.do", new publicData());
 		
 		
 	}

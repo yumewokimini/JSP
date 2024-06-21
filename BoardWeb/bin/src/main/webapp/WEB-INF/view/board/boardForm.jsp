@@ -21,8 +21,6 @@
 
 <%} %>
 
- 
-
 <form action="addBoard.do">
 <table class="table">
 	<tr>

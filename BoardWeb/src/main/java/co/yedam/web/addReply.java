@@ -33,7 +33,6 @@ public class addReply implements Control {
 			rvo.setBoardNo(Integer.parseInt(bno));
 			rvo.setReply(reply);
 			rvo.setReplyer(replyer);
-			System.out.println(rvo);
 			
 			
 			Map<String,Object> map = new HashMap<String,Object>();

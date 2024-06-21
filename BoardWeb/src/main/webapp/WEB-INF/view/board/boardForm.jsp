@@ -39,10 +39,10 @@
 	
 	 <c:choose>
 	 	<c:when test="${logId == board.writer}">
-			<input type="submit" class="btn btn-primary" value="저장"><!-- danger , warring -->
+			<input type="submit"  disabled class="btn btn-primary" value="저장"><!-- danger , warring -->
 		</c:when>
 		<c:otherwise>
-			<input type="submit" disabled class="btn btn-primary" value="저장"><!-- danger , warring -->
+			<input type="submit"  class="btn btn-primary" value="저장"><!-- danger , warring -->
 		</c:otherwise>
 	 </c:choose>
 	

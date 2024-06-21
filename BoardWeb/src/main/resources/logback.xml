@@ -11,6 +11,9 @@
   <logger name="co.yedam.mapper.StudentMapper">
     <level value="trace"/><!--trace  -->
   </logger>
+  <logger name="co.yedam.mapper.ReplyMapper">
+    <level value="trace"/><!--trace  -->
+  </logger>
     <logger name="co.yedam.mapper.BoardMapper">
     <level value="trace"/><!--trace  -->
   </logger>

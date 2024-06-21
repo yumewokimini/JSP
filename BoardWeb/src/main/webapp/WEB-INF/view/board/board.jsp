@@ -18,6 +18,38 @@
 	div.reply span{
 		display: inline-block;
 	}
+	
+</style>
+<style>
+.center {
+  text-align: center;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+a{
+  text-decoration-line: none;
+}
 </style>
 
 
@@ -96,21 +128,31 @@
 				
 			<!--	<span class="col-sm-1"><button  class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span> -->
    
+						<span class="col-sm-1"><button  class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span>
    
-   				 <c:choose>
+  <!-- 				 <c:choose>
 	 				<c:when test="${!empty logId && logId == board.writer}">
 						<span class="col-sm-1"><button  class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span>
-					</c:when>
+  					</c:when>
 					<c:otherwise>
 						<span class="col-sm-1"><button disabled class="btn btn-danger" onclick="deleteRow(event)">삭제</button></span>
 					</c:otherwise>
-				 </c:choose>
+				 </c:choose>-->
 			
 			
 			</li>
 		</ul>
 	</div>
-	
+	<div class="footer">
+		<div class="center">
+			<div class="pagination">
+				<a href="#">1</a>
+				<a href="#" class="active">2</a>
+				<a href="#">3</a>
+				<a href="#">4</a>
+			</div>
+		</div>
+	</div>
 	
 </div>
 
