@@ -6,8 +6,8 @@
   
   <mapper namespace="co.yedam.mapper.userMapper">
   	<insert id = "adduser" parameterType = "co.yedam.vo.MemberVO">
-		insert into member_tbl (user_id, user_pw,user_name)
-		values(#{userId},#{userPw},#{userName})
+		insert into member_tbl (user_id, user_pw,user_name,image)
+		values(#{userId},#{userPw},#{userName},#{image})
 	</insert>
-	
+
   </mapper>

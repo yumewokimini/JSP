@@ -21,6 +21,39 @@ fetch(url)
 		console.log(result.data);
 	})
 */
+
+//센터정보 생성.
+document.getElementById('centerDB').addEventListener('click',createCenterInfo);
+
+function createCenterInfo(){
+	//1.open API 호출
+	//2.컨트롤 호출 DB입력.
+	fetch(url)
+		.then(result => result.json())
+		.then(result => {
+			let centers = result.data; //[{},{},{}] => [{"id":"hong"}]
+			return fetch('uploadCenter.do',{
+				method: 'post', // 전달되는 값이 body 영역에 저장
+				headers: {'Content-Type' : "application/json"},//키=값&키=값
+				body:JSON.stringify(centers)//객체 -> json문자열
+			})
+		})
+		.then(result => result.json()) //{"tenCnt":3}
+		.then(result => {
+			
+			if(result.txnCnt > 0){
+				alert(result.txnCnt + '건 처리 성공');
+			}else{
+				alert('실패');				
+			}
+		})
+		.catch(err => console.log(err));
+}
+
+
+
+
+
 const target = document.querySelector('#centerList');
 let centers;
 let centers2 = [];
@@ -31,8 +64,10 @@ let list = [];
 
 //1. 목록 출력하기
 fetch(url)
-	.then(result => result.json())//이전에 처리된 결과값을 다시 반환함.
-	.then(result => {
+	
+	.then(result => result.json())//이전에 처리된 결과값을 다시 반환함. json을 java로 변환
+	.then(result => {             // 변환된 java를 사용
+		
 		centers = result.data;
 /*
 		for(let i = 0; i<centers.length; i++){
@@ -51,8 +86,11 @@ fetch(url)
 		
 		result.data.forEach((center,idx) => {
 			target.appendChild(makeRow(center));
+		});
+	})
+	.catch(function (err) {
+		console.log('err: ' ,err);
 	});
-});
 
 
 
@@ -60,7 +98,11 @@ fetch(url)
 const fields = ['id','centerName','phoneNumber','address'];
 
 function makeRow(center ={}){
+		// console.log(center);
 		let tr = document.createElement('tr');
+		tr.addEventListener('click',function(){
+			location.href = "map.do?centerName="+center.facilityName+"&x="+center.lat+"&y="+center.lng;
+		});
 
 		fields.forEach(field =>{
 			let td = document.createElement('td');
@@ -79,7 +121,7 @@ document.getElementById('finBtn').addEventListener('click',function(){
 //	if(centers[0].sido.indexOf(centers[0].sido) != -1){
 //		centers2.push(centers[0]);
 //	}
-	console.log(list);
+	//console.log(list);
 	
 		
 	const btw = String(document.querySelector('#search').value);

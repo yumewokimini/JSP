@@ -3,9 +3,9 @@
 <!--  publicData.jsp -->
 <h3>공공데이터 연습</h3>
 주소 검색 : <input type="text" id="search" placeholder="ex)동구" > <button class="btn btn-primary" id="finBtn">검색</button>
-<select>
-	<option value="">
-</select>
+
+<button id="centerDB">센터DB생성</button>
+
 <table class="table">
     <thead>
         <tr>

@@ -1,5 +1,9 @@
 package co.yedam.common;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -11,11 +15,68 @@ public class AppTest {
 		SqlSession sqlSession = sqlSeesionFactory.openSession();
 		
 		ReplyMapper mapper = sqlSession.getMapper(ReplyMapper.class);
+
+		List<Map<String, Object>> result = mapper.centerBysido();
+		for(Map<String,Object> map : result) {
+			Set<String> Keyset = map.keySet();
+			System.out.println(map.get("sido") + ", " + map.get("cnt"));
+			System.out.println("---------------------------------------");
+		}
 		
-		mapper.selectListPaging(160, 1)
-			.forEach(reply -> System.out.println(reply));
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		CenterVO cvo1 = new CenterVO();
+//		cvo1.setId("1");
+//		cvo1.setAddress("ad1");
+//		cvo1.setCenterName("cn1");
+//		cvo1.setSido("sd1");
+//		cvo1.setPhoneNumber("ph1");
+//		
+//		CenterVO cvo2 = new CenterVO();
+//		cvo2.setAddress("ad2");
+//		cvo2.setId("2");
+//		cvo2.setCenterName("cn2");
+//		cvo2.setSido("sd2");
+//		cvo2.setPhoneNumber("ph2");
+//		
+//		CenterVO[] centers = {cvo1,cvo2};
+//		int r = mapper.insertCenter(centers);
+//		System.out.println(r + "건 입력.");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//		mapper.selectListPaging(160, 1)
+//			.forEach(reply -> System.out.println(reply));
+//		
+//		
 		
 		
 		

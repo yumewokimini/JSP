@@ -1,7 +1,8 @@
 package co.yedom.service;
 
-import java.util.List;
+import java.util.*;
 
+import co.yedam.vo.CenterVO;
 import co.yedam.vo.ReplyVO;
 
 public interface ReplyService {
@@ -13,4 +14,8 @@ public interface ReplyService {
 
 	//댓글건수.
 	int getTotalCount(int bno);
+	
+	int createCenterInfo(CenterVO[] array);
+	List<Map<String,Object>> centerList();
+	
 }

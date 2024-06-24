@@ -14,7 +14,7 @@ import co.yedom.service.BoardServiceImpl;
 public class addBoard implements Control{
 	@Override
 	public void exec(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.setCharacterEncoding("UTF-8");
+		resp.setContentType("text/json;charset=utf-8");
 		
 		String title = req.getParameter("title");
 		String content = req.getParameter("content");

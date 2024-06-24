@@ -17,4 +17,8 @@ public class adduserServiceImpl implements adduserService{
 		return mapper.adduser(mvo) == 1;
 	}
 
+	@Override
+	public boolean addMemberImage(MemberVO mvo) {
+		return mapper.adduser(mvo) == 1;
+	}
 }

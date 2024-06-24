@@ -95,7 +95,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
   							<option value="Admin">관리자</option>
   						</select></td>
   	</tr>
-
+  	<tr>
+  		<th>파일</th><td><input type="file" id="myPic"></td>
+  	</tr>
+  	
   	<tr>
   		<td><button id="addBtn" class="btn btn-primary">등록</button></td>
 

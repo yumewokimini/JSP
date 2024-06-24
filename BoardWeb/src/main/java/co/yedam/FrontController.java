@@ -15,12 +15,16 @@ import co.yedam.web.adduserForm;
 import co.yedam.web.AddStudent;
 import co.yedam.web.AjaxForm;
 import co.yedam.web.BoardList;
+import co.yedam.web.CenterChart;
+import co.yedam.web.CenterInfo;
+import co.yedam.web.ChartForm;
 import co.yedam.web.CheckIdAjax;
 import co.yedam.web.GetBoard;
 import co.yedam.web.LoginControl;
 import co.yedam.web.LoginForm;
 import co.yedam.web.LogoutControl;
 import co.yedam.web.MainControl;
+import co.yedam.web.MapForm;
 import co.yedam.web.MemberAddAjax;
 import co.yedam.web.MemberAjax;
 import co.yedam.web.ModifyBoard;
@@ -115,6 +119,16 @@ public class FrontController extends HttpServlet{
 		map.put("/replyTotalCnt.do", new totalCnt());
 		//공공기관 데이터
 		map.put("/publicData.do", new publicData());
+		
+		// map api 호출.
+		map.put("/map.do", new MapForm());
+		
+		//json 문자열 -> db.insert.
+		map.put("/uploadCenter.do", new CenterInfo());
+		
+		map.put("/chartForm.do", new ChartForm());
+		map.put("/centerChart.do", new CenterChart());
+		
 		
 		
 	}
