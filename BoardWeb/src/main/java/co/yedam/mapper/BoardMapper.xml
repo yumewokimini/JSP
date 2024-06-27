@@ -109,6 +109,7 @@
 	<select id="memberList" resultType="co.yedam.vo.MemberVO">
 		select *
 		from member_tbl
+		order by user_id
 	</select>
 
 	<insert id="insertMemberAjax" parameterType="co.yedam.vo.MemberVO">

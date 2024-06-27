@@ -83,9 +83,12 @@ body {font-family: Arial, Helvetica, sans-serif;}
   	<tr>
   		<th>아이디</th><td><input type="text" id="uid"></td>
   	</tr>
+
   	<tr>
   		<th>비밀번호</th><td><input type="password" id="upw"></td>
   	</tr>
+
+
   	<tr>
   		<th>이름</th><td><input type="text" id="uname"></td>
   	</tr>
@@ -96,7 +99,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   						</select></td>
   	</tr>
   	<tr>
-  		<th>파일</th><td><input type="file" id="myPic"></td>
+  		<th>파일</th><td><input class="form-control" type="file" id="myPic"></td>
   	</tr>
   	
   	<tr>
@@ -114,8 +117,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
 			<th>아이디</th>
 			<th>이름</th>
 <!-- 		<th>이메일</th>
-			<th>급여</th> -->
-			<th>비밀번호</th>
+			<th>급여</th> 
+			<th>비밀번호</th>-->
+			<th>이미지</th>
 			<th>권한</th>
 			<th>삭제</th>
 			

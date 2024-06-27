@@ -36,23 +36,33 @@ public class adduser implements Control {
 		
 		String id = mr.getParameter("id");
 		String pass1 = mr.getParameter("pass1");
-		String pass2 = mr.getParameter("pass2");
+		String pass2 = pass1;
+		//String pass2 = mr.getParameter("pass2");
 		String name = mr.getParameter("name");
 		String img = mr.getFilesystemName("myImage");
 		
 		adduserService aus = new adduserServiceImpl();		
 		
 		if(pass1.equals(pass2)){
-			System.out.println("비번일치");
+			//System.out.println("비번일치");
 						
 			mvo.setUserId(id);
 			mvo.setUserPw(pass1);
 			mvo.setUserName(name);
 			mvo.setImage(img);
-						
-			if(aus.addMemberImage(mvo)) {		
-				resp.sendRedirect("memberList.do");		
-			}
+			
+			//System.out.println(img);
+			
+			
+				if(aus.addMemberImage(mvo)) {	
+					if(req.getMethod().equals("POST")) {
+						resp.sendRedirect("memberList.do");						
+					}else if (req.getMethod().equals("PUT")) {
+						//{"retCode":"OK"}
+						resp.getWriter().print("{\"retCode\":\"OK\"}");
+					}
+					
+				}
 			
 		}else {
 			resp.sendRedirect("adduserForm.do");

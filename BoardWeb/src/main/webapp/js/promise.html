@@ -6,7 +6,19 @@
 	</head>
 <body>
 	<p>promise 객체</p>
+		
 	<script type="text/javascript">3
+	
+	fetch('localhost/BoardWeb/memberList.do')
+	.then(result => result.json())
+	.then(result => {
+		result.forEach()
+	})
+	.catch(err => console.log(er));
+	
+	
+	
+	
 	
 		// async, await 일경우 해당 await 부분이 모든것을 실행후 실행되도록 만드는것
 		async function promiseFunc(){

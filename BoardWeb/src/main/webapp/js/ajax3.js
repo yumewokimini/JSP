@@ -6,7 +6,7 @@
  xthp.open('get','membersAjax.do');
  xthp.send();
  xthp.onload = function(){
- 	console.log(xthp);
+ 	//console.log(xthp);
 	let data = JSON.parse(xthp.responseText);
 	data.forEach(user => {
 		document.getElementById('list').appendChild(makeRow(user));
@@ -17,6 +17,58 @@
    
  // 등록이벤트
  document.getElementById('addBtn').addEventListener('click',function(){
+	const formData = new FormData(); // form-data 처리
+	const fileField = document.querySelector('#myPic');
+	
+	formData.append("id", document.getElementById('uid').value);
+	formData.append("pass1", document.getElementById('upw').value);
+	formData.append("name", document.getElementById('uname').value);	
+	formData.append("myImage", fileField.files[0]);
+
+	upload(formData);	
+ })
+ 
+//fetch 파일 업로드
+ 
+ 
+ async function upload(formData) {
+  	try {
+  		const response = await fetch("adduser.do", {
+ 	    	method: "PUT",
+  	    	body: formData,
+  	  	});
+  	  		const result = await response.json();
+	    	if(result.retCode == 'OK'){
+	    	console.log("성공:", result);
+				
+			}
+	    	
+	   		let id = document.getElementById('uid').value;
+			let pw = document.getElementById('upw').value;
+			let um = document.getElementById('uname').value;
+			let auth = document.getElementById('auth').value;
+	    	let newMem = {userId:id,userName:um, userPw: pw,responsibility: auth}
+
+  	 	 	
+//  	 	 	let newMem = result.
+  	 	 	document.getElementById('list').appendChild(makeRow(newMem));
+	} catch (error) {
+ 		console.error("실패:", error);
+	}
+} //end odf upload(formdata)
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ //등록이벤트 임시 함수 저장소.
+ 
+ function addMemberFunc(){
 	let id = document.getElementById('uid').value;
 	let pw = document.getElementById('upw').value;
 	let um = document.getElementById('uname').value;
@@ -38,7 +90,8 @@
 			alert('실패');
 		}
 	}
- })
+ }
+ 
  
  // id 체크 이벤트
  document.getElementById('uid').addEventListener('change',function(){
@@ -63,7 +116,8 @@
  
  
  //json 문자열의 필드이름 활용
- const fields = ['userId','userName','userPw','Responsibility']; //MemberAjax 에서 for 구문에서 녹색부분
+ //const fields = ['userId','userName','userPw','Responsibility']; //MemberAjax 에서 for 구문에서 녹색부분
+ const fields = ['userId','userName','image','Responsibility']; //MemberAjax 에서 for 구문에서 녹색부분
  function makeRow(obj = {}){
 	let tr = document.createElement('tr');
 	tr.setAttribute('id', obj.userId); // tr id =user01
@@ -72,13 +126,21 @@
 	tr.addEventListener('dblclick',function(e){
 		document.getElementById('myModal').style.display = 'block';
 		//선택된 사용자의 이름, 버번을 모달에 출력.
-		console.log(e,this);
+		//console.log(e,this);
+		document.getElementById('modify_id').value=//
+			this.children[0].innerHTML;
 		document.getElementById('modify_name').value=//
 			this.children[1].innerHTML;
 		document.getElementById('modify_pass').value=//
 			this.children[2].innerHTML;
-				document.getElementById('modify_id').value=//
-			this.children[0].innerHTML;
+//		document.getElementById('image').value=//
+//			this.children[2].innerHTML;
+		//let img = document.getElementById('image').Value;
+		//console.log(img);
+		
+		//value=//
+		//	this.children[2].innerHTML;
+
 	})
 	
 	fields.forEach(field => {
@@ -109,7 +171,10 @@
 
 function removeMemberFnc(e){
 	let did = this.getAttribute('data-delId'); 
-	let tr = document.getElementById(did); // 누르시점에 user03
+	console.log(did);
+	let tr = document.document(did); 
+	console.log(tr);
+	// 누르시점에 user03
 	// let did = this.dataset.delId;
 	// did = e.target.parentElement.parentElement.children[0].innerHTML;	
 	
